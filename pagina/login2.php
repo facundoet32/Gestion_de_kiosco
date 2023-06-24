@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="flynn paff.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="d-flex justify-content-center align-items-center vh-100" style="background-color: #e3f2fd;">
+  <?php
+    session_start();
+
+    if( isset($_SESSION['usuario'])){
+        echo $_SESSION['usuario']."   ".$_SESSION['clave'];
+
+    }
+?>
+    <form action="procesar2.php" method="post">
+      <div
+      class="bg-light p-5 rounded-5 text-secondary shadow"
+      style="width: 25rem"
+    >
+      <div class="d-flex justify-content-center">
+        <img
+          src="login.png"
+          alt="login-icon"
+          style="height: 7rem"
+        />
+      </div>
+      <div class="text-center fs-2 fw-bold text-bg-light">Login</div>
+      <div class="input-group mt-4">
+        <div class="input-group-text" style="background-color: #e3f2fd;">
+          <img
+            src="personita.png"
+            alt="username-icon"
+            style="height: 1rem"
+          />
+        </div>
+        <input
+          class="form-control bg-light"
+          type="text"
+          name="usuario"
+          placeholder="Username"
+        />
+      </div>
+      <div class="input-group mt-1">
+        <div class="input-group-text" style="background-color: #e3f2fd;">
+          <img
+            src="candado.png"
+            alt="password-icon"
+            style="height: 1rem"
+          />
+        </div>
+        <input
+          class="form-control bg-light "
+          type="password"
+          name="clave"
+          placeholder="Password"
+        />
+      </div>
+      <div>
+        <input class="btn text-black w-100 mt-4 fw-semibold shadow-sm" style="background-color: #e3f2fd;" type="submit" value="Login">
+      </div>
+      <div class="d-flex gap-1 justify-content-center mt-1">
+        <div>No tiene cuenta?</div>
+        <a href="register.html" class="text-decoration-none text-info fw-semibold"
+          >Register</a
+        >
+      </div>
+    </div>
+    </form>
+  </body>
+</html>
